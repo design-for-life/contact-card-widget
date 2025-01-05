@@ -1,0 +1,16 @@
+@media (max-width: 720px) {
+    .mflex {
+        display: flex;
+    }
+
+    .mrow {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .mcol {
+        display: flex;
+        flex-direction: column;
+    }
+
+}

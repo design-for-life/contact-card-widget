@@ -1,0 +1,115 @@
+:root {
+    --app-bg-color: #f4f4f9;
+    --app-text-color: #333;
+    --5px: 5px;
+    --8px: 8px;
+    --10px: 10px;
+    --14px: 14px;
+    --16px: 16px;
+    --20px: 20px;
+    --color-blue: #007BFF;
+    --color-white: #fff;
+    --color-grey: #ccc;
+    --color-dark-grey: #555;
+    --color-red: red;
+    --max-wid900: 900px;
+}
+
+html, body {
+    font-family: Poppins, Arial, sans-serif;
+    margin: var(--20px);
+    background-color: var(--app-bg-color);
+    color: var(--app-text-color);
+}
+
+* {
+    box-sizing: border-box;
+    color: var(--app-text-color);
+}
+
+.center-screen {
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: var(--color-blue);
+}
+
+.max-width {
+    max-width: var(--max-wid900);
+}
+
+/* Container for Form and Contact Card */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--20px);
+    margin: var(--20px) auto;
+}
+
+.flex {
+    display: flex;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+.gap5 {
+    gap: 5px;
+}
+
+.gap10 {
+    gap: 10px;
+}
+
+
+/* Form Styles */
+label {
+    display: block;
+    margin-bottom: var(--5px);
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: var(--8px);
+    margin: 0;
+    border: 1px solid var(--color-grey);
+    border-radius: var(--5px);
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: var(--10px);
+    background-color: var(--color-blue);
+    border: none;
+    color: var(--color-white);
+    font-size: var(--16px);
+    cursor: pointer;
+    border-radius: var(--5px);
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.error {
+    color: var(--color-red);
+    font-size: 0.875em;
+    margin-top: var(--5px);
+}
+
+/* Contact Card Styles */
+.box-shadow {
+    box-shadow: 0 var(--5px) 6px rgba(0, 0, 0, 0.1);
+}
