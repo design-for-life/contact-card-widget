@@ -12,6 +12,7 @@
     --color-grey: #ccc;
     --color-dark-grey: #555;
     --color-red: red;
+    --max-wid900: 900px;
 }
 
 html, body {
@@ -26,9 +27,17 @@ html, body {
     color: var(--app-text-color);
 }
 
+.center-screen {
+    margin: 0 auto;
+}
+
 h1 {
     text-align: center;
-    color: #007BFF;
+    color: var(--color-blue);
+}
+
+.max-width {
+    max-width: var(--max-wid900);
 }
 
 /* Container for Form and Contact Card */
@@ -38,14 +47,32 @@ h1 {
     align-items: flex-start;
     gap: var(--20px);
     margin: var(--20px) auto;
-    max-width: 900px;
 }
+
+.flex {
+    display: flex;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+.gap5 {
+    gap: 5px;
+}
+
+.gap10 {
+    gap: 10px;
+}
+
 
 /* Form Styles */
-.form-group {
-    margin-bottom: var(--16px);
-}
-
 label {
     display: block;
     margin-bottom: var(--5px);
