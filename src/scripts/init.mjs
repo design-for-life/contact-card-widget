@@ -1,21 +1,24 @@
 import {showContactCardData} from "./contactCard.mjs";
 
-export const handleContactFormSubmitClick = (event) => {
-  event.preventDefault(); // Prevent form submission
-
+let iti = null;
+export const initIntlPhone = () => {
   // Initialize intl-tel-input for the phone input field
   const phoneInput = document.getElementById("phone");
   if (!window.intlTelInput) {
     return;
   }
-  const iti = window.intlTelInput(phoneInput, {
+  iti = window.intlTelInput(phoneInput, {
     initialCountry: "in", // Default to India
     preferredCountries: ["in", "us", "gb"],
     utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
   });
+  return iti;
+};
+
+export const handleContactFormSubmitClick = (event) => {
+  event.preventDefault(); // Prevent form submission
 
   let isValid = true;
-
   // Clear previous errors
   document.querySelectorAll(".error").forEach(el => el.textContent = "");
 
