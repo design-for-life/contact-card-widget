@@ -1,4 +1,4 @@
-import {attachEvents} from "./src/scripts/init.mjs";
+import {attachEvents, initIntlPhone} from "./src/scripts/init.mjs";
 import {loadContactCardWidget} from "./src/scripts/contactCard.mjs";
 
 const promiseClosure = (e) => {
@@ -12,6 +12,7 @@ const main = async () => {
   const loadWidgetPromise = loadContactCardWidget();
   loadWidgetPromise.finally(() => {
     console.log("widget has been loaded");
+    initIntlPhone();
     attachEvents();
   });
 };
