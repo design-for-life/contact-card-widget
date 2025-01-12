@@ -1,0 +1,25 @@
+{
+  "name": "contact-card-widget",
+  "version": "1.0.0",
+  "description": "an embeddable widget to display contact information",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/design-for-life/contact-card-widget.git"
+  },
+  "keywords": [
+    "contact",
+    "card",
+    "generator",
+    "widget"
+  ],
+  "author": "sachin lala, devendra prasad",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/design-for-life/contact-card-widget/issues"
+  },
+  "homepage": "https://github.com/design-for-life/contact-card-widget#readme"
+}
