@@ -14,9 +14,9 @@ const main = async () => {
   loadWidgetPromise.finally(() => {
     console.log("widget has been loaded");
     initIntlPhone();
-    attachEvents();
     showContactCardDefault(profileDataSachin);
     showContactCardVertical(profileDataSachin);
+    attachEvents();
   });
 };
 //invoke immediately

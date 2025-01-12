@@ -1,5 +1,6 @@
 import {showContactCardDefault, showContactCardVertical} from "./contactCard.mjs";
 import {handleSamplePrefill} from "../component/contactCardComponent.mjs";
+import {printDiv} from "./printDiv.js";
 
 let iti = null;
 export const initIntlPhone = () => {
@@ -93,4 +94,10 @@ export const attachEvents = () => {
 
   const samplePrefillBox = document.getElementById("samplePrefillBox");
   samplePrefillBox !== null && samplePrefillBox.addEventListener("click", handleSamplePrefill);
+
+  const printLayoutBtn1 = document.getElementById("printLayoutBtn1");
+  printLayoutBtn1 !== null && printLayoutBtn1.addEventListener("click", () => printDiv("printLayout1"));
+
+  const printLayoutBtn2 = document.getElementById("printLayoutBtn2");
+  printLayoutBtn2 !== null && printLayoutBtn2.addEventListener("click", () => printDiv("printLayout2"));
 };
