@@ -33,7 +33,6 @@ html, body {
 
 h1 {
   text-align: center;
-  color: var(--color-blue);
 }
 
 .max-width {
@@ -115,7 +114,7 @@ button:hover {
   box-shadow: 0 var(--5px) 6px rgba(0, 0, 0, 0.1);
 }
 
-h1, h2 {
+h1, h2, p, div, span, a {
   padding: unset;
   margin: unset;
 }
@@ -145,4 +144,37 @@ h1, h2 {
 
 .wid100 {
   width: 100%;
+}
+
+.danger-tag {
+  background-color: #ffdddd;
+  border-left: 6px solid #f44336;
+}
+
+.success-tag {
+  background-color: #ddffdd;
+  border-left: 6px solid #04AA6D;
+}
+
+.info-tag {
+  background-color: #e7f3fe;
+  border-left: 6px solid #2196F3;
+}
+
+
+.warning-tag {
+  background-color: #ffffcc;
+  border-left: 6px solid #ffeb3b;
+}
+
+.mg-top-10 {
+  margin-top: 10px !important;
+}
+
+.white-bg {
+  background-color: white;
+}
+
+.pad10 {
+  padding: 10px;
 }

@@ -46,6 +46,14 @@ const contactCardComponent = () => {
           ${getErrorBlock("linkedin")}
         </div>
 
+        <div class="col gap5">
+        <div class="row gap5 align-center space-between">
+            <label for="linkedin" class="min-label-wid flex-start">Profile Image URL:</label>
+            <input type="url" id="profile-image" name="profile-image" placeholder="Enter profile image URL" required>
+            </div>
+          ${getErrorBlock("profile-image")}
+        </div>
+
         <button id="btnFormUpdate">Generate Card</button>
     </div>`;
 };

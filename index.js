@@ -1,5 +1,5 @@
 import {attachEvents, initIntlPhone} from "./src/scripts/init.mjs";
-import {loadContactCardWidget, showContactCardData} from "./src/scripts/contactCard.mjs";
+import {loadContactCardWidget, showContactCardDefault, showContactCardVertical} from "./src/scripts/contactCard.mjs";
 import {profileDataSachin} from "./src/test/sample-profile.js";
 
 const promiseClosure = (e) => {
@@ -15,7 +15,8 @@ const main = async () => {
     console.log("widget has been loaded");
     initIntlPhone();
     attachEvents();
-    showContactCardData(profileDataSachin);
+    showContactCardDefault(profileDataSachin);
+    showContactCardVertical(profileDataSachin);
   });
 };
 //invoke immediately

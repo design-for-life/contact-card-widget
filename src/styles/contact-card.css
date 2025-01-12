@@ -37,3 +37,23 @@
 .iti {
   width: 100%;
 }
+
+.card {
+  margin: auto;
+  text-align: center;
+}
+
+.radius10 {
+  border-radius: var(--8px);
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+.contact-image-100 {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}

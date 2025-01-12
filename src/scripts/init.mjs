@@ -1,4 +1,4 @@
-import {showContactCardData} from "./contactCard.mjs";
+import {showContactCardDefault, showContactCardVertical} from "./contactCard.mjs";
 
 let iti = null;
 export const initIntlPhone = () => {
@@ -56,6 +56,13 @@ export const handleContactFormSubmitClick = (event) => {
     isValid = false;
   }
 
+  // Validate LinkedIn URL
+  const profileImage = document.getElementById("profile-image");
+  if (!linkedin.checkValidity()) {
+    document.getElementById("profile-image-error").textContent = "Enter a valid profile image URL.";
+    isValid = false;
+  }
+
   // If valid, update the widget
   if (isValid) {
     const profileData = {
@@ -63,10 +70,12 @@ export const handleContactFormSubmitClick = (event) => {
       location: location.value.trim(),
       email: email.value.trim(),
       phone: iti.getNumber(),
-      linkedin: linkedin.value.trim()
+      linkedin: linkedin.value.trim(),
+      profileImage: profileImage.value.trim(),
     };
 
-    showContactCardData(profileData);
+    showContactCardDefault(profileData);
+    showContactCardVertical(profileData);
   }
 };
 
