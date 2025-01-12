@@ -1,4 +1,5 @@
 import {showContactCardDefault, showContactCardVertical} from "./contactCard.mjs";
+import {handleSamplePrefill} from "../component/contactCardComponent.mjs";
 
 let iti = null;
 export const initIntlPhone = () => {
@@ -26,6 +27,13 @@ export const handleContactFormSubmitClick = (event) => {
   const name = document.getElementById("name");
   if (name.value.trim() === "") {
     document.getElementById("name-error").textContent = "Name is required.";
+    isValid = false;
+  }
+
+  // Validate title
+  const title = document.getElementById("title");
+  if (title.value.trim() === "") {
+    document.getElementById("title-error").textContent = "title is required.";
     isValid = false;
   }
 
@@ -82,4 +90,7 @@ export const handleContactFormSubmitClick = (event) => {
 export const attachEvents = () => {
   const btnFormSubmit = document.getElementById("btnFormUpdate");
   btnFormSubmit !== null && btnFormSubmit.addEventListener("click", handleContactFormSubmitClick);
+
+  const samplePrefillBox = document.getElementById("samplePrefillBox");
+  samplePrefillBox !== null && samplePrefillBox.addEventListener("click", handleSamplePrefill);
 };

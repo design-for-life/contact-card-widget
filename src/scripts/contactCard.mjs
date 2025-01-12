@@ -21,6 +21,7 @@ export const showContactCardDefault = (profileData) => {
   widgetContainer.innerHTML = `<div class="col gap5 box-shadow contact-widget">
   <div class="">
     <h3>${profileData.name}</h3>
+    <p class="title"><strong>Title:</strong> ${profileData.title}</p>
     <p><strong>Location:</strong> ${profileData.location}</p>
     <p><strong>Email:</strong> <a href="mailto:${profileData.email}">${profileData.email}</a></p>
     <p><strong>Phone:</strong> <a href="tel:${profileData.phone}">${profileData.phone}</a></p>

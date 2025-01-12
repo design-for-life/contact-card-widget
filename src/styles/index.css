@@ -73,8 +73,6 @@ h1 {
 
 /* Form Styles */
 label {
-  display: block;
-  margin-bottom: var(--5px);
   font-weight: bold;
 }
 
@@ -146,6 +144,10 @@ h1, h2, p, div, span, a {
   width: 100%;
 }
 
+.wid10 {
+  width: 10%;
+}
+
 .danger-tag {
   background-color: #ffdddd;
   border-left: 6px solid #f44336;
@@ -178,3 +180,32 @@ h1, h2, p, div, span, a {
 .pad10 {
   padding: 10px;
 }
+
+
+input[type="checkbox"] {
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
