@@ -76,6 +76,7 @@ export const handleContactFormSubmitClick = (event) => {
   if (isValid) {
     const profileData = {
       name: name.value.trim(),
+      title: title.value.trim(),
       location: location.value.trim(),
       email: email.value.trim(),
       phone: iti.getNumber(),
