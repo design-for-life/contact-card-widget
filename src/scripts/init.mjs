@@ -86,6 +86,7 @@ export const handleContactFormSubmitClick = (event) => {
 
     showContactCardDefault(profileData);
     showContactCardVertical(profileData);
+    attachEvents();
   }
 };
 
