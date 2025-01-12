@@ -18,7 +18,7 @@ export const showContactCardDefault = (profileData) => {
   if (!widgetContainer) {
     return;
   }
-  widgetContainer.innerHTML = `<div class="box-shadow contact-widget">
+  widgetContainer.innerHTML = `<div class="box-shadow contact-widget col gap10">
   <div id="printLayout1" class="col gap10">
   <div class="">
     <h3>${profileData.name}</h3>
@@ -34,12 +34,12 @@ export const showContactCardDefault = (profileData) => {
 `;
 };
 
-export const showContactCardVertical = (profileData) => {
+export const showContactCardHorizontal = (profileData) => {
   const widgetContainer = document.querySelector(".contact-widget-show-container");
   if (!widgetContainer) {
     return;
   }
-  widgetContainer.innerHTML += `<div class="box-shadow contact-widget">
+  widgetContainer.innerHTML += `<div class="box-shadow contact-widget col gap10">
   <div id="printLayout2" class="row gap5">
     <div  id="card-layout-2" class=" row pad10 gap5">
       <img class="contact-image-100" src="${profileData.profileImage}" alt="${profileData.name} profile">
@@ -54,6 +54,30 @@ export const showContactCardVertical = (profileData) => {
     </div>
     </div>
   <button id="printLayoutBtn2">Print</button>
+</div>
+`;
+};
+
+export const showContactCardVertical = (profileData) => {
+  const widgetContainer = document.querySelector(".contact-widget-show-container");
+  if (!widgetContainer) {
+    return;
+  }
+  widgetContainer.innerHTML += `<div class="box-shadow contact-widget col gap10">
+  <div id="printLayout3" class="col align-center">
+    <div  id="card-layout-2" class="row pad10 gap5 bg-candy wid100 align-center radius-left-t-20">
+      <img class="contact-image-100" src="${profileData.profileImage}" alt="${profileData.name} profile">
+    </div>
+    <div class="wid100 bg-slate radius-right-b-20">
+      <h1 class="">${profileData.name}</h1>
+      <p class="title">${profileData.title}</p>
+      <p>${profileData.location}</p>
+      <p>${profileData.email}</p>
+      <p>${profileData.phone}</p>
+      <p><a href="${profileData.linkedin}" target="_blank">View Profile</a></p>
+    </div>
+    </div>
+  <button id="printLayoutBtn3">Print</button>
 </div>
 `;
 };

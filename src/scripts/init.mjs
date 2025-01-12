@@ -1,4 +1,4 @@
-import {showContactCardDefault, showContactCardVertical} from "./contactCard.mjs";
+import {showContactCardDefault, showContactCardHorizontal, showContactCardVertical} from "./contactCard.mjs";
 import {handleSamplePrefill} from "../component/contactCardComponent.mjs";
 import {printDiv} from "./printDiv.js";
 
@@ -85,6 +85,7 @@ export const handleContactFormSubmitClick = (event) => {
     };
 
     showContactCardDefault(profileData);
+    showContactCardHorizontal(profileData);
     showContactCardVertical(profileData);
     attachEvents();
   }
@@ -112,6 +113,10 @@ export const attachEvents = () => {
     {
       id: "printLayoutBtn2",
       event: () => printDiv("printLayout2")
+    },
+    {
+      id: "printLayoutBtn3",
+      event: () => printDiv("printLayout3")
     }
   ];
   for (let evt of events) {

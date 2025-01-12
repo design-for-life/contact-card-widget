@@ -12,6 +12,8 @@
   --color-grey: #ccc;
   --color-dark-grey: #555;
   --color-red: red;
+  --color-candy: #ffeef3;
+  --color-slate-lighter-blue: #eef5fc;
   --color-checkbox: #4fad3b;
   --max-wid900: 900px;
 }
@@ -121,6 +123,7 @@ h1, h2, p, div, span, a {
 .align-center {
   align-items: center;
   text-align: center;
+  justify-content: center;
 }
 
 .flex-start {
@@ -211,3 +214,18 @@ input[type="checkbox"]:checked::before {
   background-color: var(--color-checkbox) !important;
 }
 
+.bg-candy {
+  background-color: var(--color-candy) !important;
+}
+
+.bg-slate {
+  background-color: var(--color-slate-lighter-blue) !important;
+}
+
+.radius-left-t-20 {
+  border-top-left-radius: 20px;
+}
+
+.radius-right-b-20 {
+  border-bottom-right-radius: 20px;
+}
