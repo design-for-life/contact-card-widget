@@ -12,6 +12,7 @@
   --color-grey: #ccc;
   --color-dark-grey: #555;
   --color-red: red;
+  --color-checkbox: #4fad3b;
   --max-wid900: 900px;
 }
 
@@ -207,5 +208,6 @@ input[type="checkbox"]::before {
 
 input[type="checkbox"]:checked::before {
   transform: scale(1);
+  background-color: var(--color-checkbox) !important;
 }
 
