@@ -1,4 +1,6 @@
-import {showContactCardData} from "./contactCard.mjs";
+import {showContactCardDefault, showContactCardVertical} from "./contactCard.mjs";
+import {handleSamplePrefill} from "../component/contactCardComponent.mjs";
+import {printDiv} from "./printDiv.js";
 
 let iti = null;
 export const initIntlPhone = () => {
@@ -29,6 +31,13 @@ export const handleContactFormSubmitClick = (event) => {
     isValid = false;
   }
 
+  // Validate title
+  const title = document.getElementById("title");
+  if (title.value.trim() === "") {
+    document.getElementById("title-error").textContent = "title is required.";
+    isValid = false;
+  }
+
   // Validate location
   const location = document.getElementById("location");
   if (location.value.trim() === "") {
@@ -56,21 +65,41 @@ export const handleContactFormSubmitClick = (event) => {
     isValid = false;
   }
 
+  // Validate LinkedIn URL
+  const profileImage = document.getElementById("profile-image");
+  if (!linkedin.checkValidity()) {
+    document.getElementById("profile-image-error").textContent = "Enter a valid profile image URL.";
+    isValid = false;
+  }
+
   // If valid, update the widget
   if (isValid) {
     const profileData = {
       name: name.value.trim(),
+      title: title.value.trim(),
       location: location.value.trim(),
       email: email.value.trim(),
       phone: iti.getNumber(),
-      linkedin: linkedin.value.trim()
+      linkedin: linkedin.value.trim(),
+      profileImage: profileImage.value.trim(),
     };
 
-    showContactCardData(profileData);
+    showContactCardDefault(profileData);
+    showContactCardVertical(profileData);
+    attachEvents();
   }
 };
 
 export const attachEvents = () => {
   const btnFormSubmit = document.getElementById("btnFormUpdate");
   btnFormSubmit !== null && btnFormSubmit.addEventListener("click", handleContactFormSubmitClick);
+
+  const samplePrefillBox = document.getElementById("samplePrefillBox");
+  samplePrefillBox !== null && samplePrefillBox.addEventListener("click", handleSamplePrefill);
+
+  const printLayoutBtn1 = document.getElementById("printLayoutBtn1");
+  printLayoutBtn1 !== null && printLayoutBtn1.addEventListener("click", () => printDiv("printLayout1"));
+
+  const printLayoutBtn2 = document.getElementById("printLayoutBtn2");
+  printLayoutBtn2 !== null && printLayoutBtn2.addEventListener("click", () => printDiv("printLayout2"));
 };
