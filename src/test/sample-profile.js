@@ -1,4 +1,4 @@
-const profileData = {
+export const profileDataSachin = {
   name: "Sachin Lala",
   location: "Bengaluru, Karnataka, India",
   linkedin: "https://www.linkedin.com/in/sachinlala/",

@@ -5,7 +5,11 @@ export const loadContactCardWidget = async () => {
   if (!widgetForm) {
     return false;
   }
-  widgetForm.innerHTML = contactCardComponent();
+  widgetForm.innerHTML = `<div class="col gap5 wid100">
+    <h1>Card generator</h1>
+    ${contactCardComponent()}
+    </div>
+  `;
   return true;
 };
 
