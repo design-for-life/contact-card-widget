@@ -90,16 +90,31 @@ export const handleContactFormSubmitClick = (event) => {
   }
 };
 
+const associateEvent = (obj) => {
+  const cta = document.getElementById(obj.id);
+  cta !== null && cta.addEventListener("click", obj.event);
+};
+
 export const attachEvents = () => {
-  const btnFormSubmit = document.getElementById("btnFormUpdate");
-  btnFormSubmit !== null && btnFormSubmit.addEventListener("click", handleContactFormSubmitClick);
-
-  const samplePrefillBox = document.getElementById("samplePrefillBox");
-  samplePrefillBox !== null && samplePrefillBox.addEventListener("click", handleSamplePrefill);
-
-  const printLayoutBtn1 = document.getElementById("printLayoutBtn1");
-  printLayoutBtn1 !== null && printLayoutBtn1.addEventListener("click", () => printDiv("printLayout1"));
-
-  const printLayoutBtn2 = document.getElementById("printLayoutBtn2");
-  printLayoutBtn2 !== null && printLayoutBtn2.addEventListener("click", () => printDiv("printLayout2"));
+  const events = [
+    {
+      id: "btnFormUpdate",
+      event: handleContactFormSubmitClick
+    },
+    {
+      id: "samplePrefillBox",
+      event: handleSamplePrefill
+    },
+    {
+      id: "printLayoutBtn1",
+      event: () => printDiv("printLayout1")
+    },
+    {
+      id: "printLayoutBtn2",
+      event: () => printDiv("printLayout2")
+    }
+  ];
+  for (let evt of events) {
+    associateEvent(evt);
+  }
 };
